@@ -1,0 +1,30 @@
+{% extends "home.html" %}
+{% block content %}
+<h1 class="head-option">Project Demo</h1>
+<div class="p-6">
+    <p class="mt-4 mb-4">
+        <input id="name" type="text" data-role="input" data-prepend="Name: ">
+    </p>
+    <p class="mb-4">
+        <input id="email" type="email" data-role="input" data-prepend="Email-ID: ">
+    </p>
+    <div class="mb-4">
+        <p>Enter the data: </p>
+        <textarea id="qdata" data-role="textarea" data-append="<button class='button secondary' id='qbtn'><span class='mif-arrow-right'></span></button><h6 id='chars-counter'></h6>"
+            data-chars-counter="#chars-counter" data-chars-counter-template="$1"></textarea>
+    </div>
+    <p id="cspinner" style="display:none"><span class="mif-spinner3 ani-pulse mif-2x"></span> Please wait while we
+        generate the question to your given data</p>
+    <div class="mb-4">
+        <p>Questions Generated: </p>
+        <div class="border">
+            <p id="adata"></p>
+        </div>
+    </div>
+    <div id="feedbform" class="mb-4" style="display:none">
+        <p>Give us feedback based on your experience</p>
+        <textarea id="feeds" data-role="textarea" data-append="<h6 id='feed-counter'></h6>" data-chars-counter="#feed-counter" data-feed-counter-template="$1"></textarea>
+        <button class="button success mt-2" id="submit_final">Submit Feedback</button>
+    </div>
+</div>
+{% endblock %}

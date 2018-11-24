@@ -1,0 +1,136 @@
+.navcontent .csidenav .colorBrand .anicon {
+    margin: 6px 30px 0px 30px;
+    font-size: 64px;
+    top: 0px;
+}
+
+.cbrand {
+    font-size: 26px;
+    font-weight: 300;
+    text-align: center;
+    padding-top: 74px;
+    cursor: default;
+    margin-right: 20px;
+}
+
+.navcontent {
+    display: block;
+    position: relative;
+    background-color: #fff;
+    color: #1d1d1d;
+    overflow: hidden;
+    height: 100%;
+    min-height: 100%;
+}
+
+.navcontent .csidenav {
+    width: 160px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 1;
+    border-left: 2px solid #e5e5e5;
+}
+
+.navcontent .admin-content {
+    position: relative;
+}
+
+.admin-content {
+    width: calc(100% - 159px) !important;
+    margin-left: 160px;
+}
+
+.colorBrand {
+    background-color: #b8860bdb !important;
+    color: #fff !important;
+}
+
+/*.admin-appbar {
+    width: calc(100% - 149px) !important;
+    left: auto;
+    background-color: #ffffff;
+    color: #257cad;
+    border: 0px;
+    box-shadow: 6px 6px 20px 0px #b7b7b7;
+}*/
+
+.navcontent .csidenav .brand-separator {
+    height: 0.5px !important;
+    background-color: #dfdfdf;
+    width: 100%;
+    display: block;
+}
+
+.cbutton {
+    display: block;
+    position: fixed;
+    bottom: 2.5rem;
+    right: 2rem;
+    z-index: 99;
+    border: none;
+    outline: none;
+}
+
+.cbutton:hover {
+    box-shadow: 0px 0px 30px 1px #000000b5;
+}
+
+.footer-note {
+    border: 3px solid darkslategray;
+    text-align: center;
+    padding:26px 4px;
+}
+
+.footer-title {
+    font-size: 13px;
+}
+
+.head-option {
+    font-weight: 100!important;
+}
+
+.app-bar .app-bar-menu li:not(.no-hover):hover {
+    background: rgba(255, 255, 255, .5);
+    cursor: default;
+}
+.dialog-title{
+    text-align:center;
+}
+.login-form {
+    width: 350px;
+    height: auto;
+    top: 50%;
+    margin-top: -160px;
+}
+.clogin-pos{
+    top:-50%;
+}
+.sidebar-menu{
+    min-height:100%;
+}
+.sidebar-menu li{
+    border:1px solid #ccc;
+    height:auto;
+}
+.sidebar-menu li a{
+    margin:64px 0px;
+}
+
+.clogout{
+    margin-left: 87%;
+    background-color: darkblue!important;
+    color:white!important;
+}
+.ancon{
+    padding: 20px;
+    font-size: 64px;
+}
+.app-bar{
+    min-height: 80px;
+    background-color: rgba(184, 134, 11, 0.86);
+}
+.app-bar .brand{
+    background-color: initial;
+}

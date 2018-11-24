@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<body>
+<div data-role="appbar" data-expand-point="true">
+        <div class="brand no-hover">
+            <span class="ancon mif-open-book"></span>
+        </div>
+        
+        <button class="button drop-shadow rounded app-bar-item clogout" role="button">Logout</button>
+    
+    </div>
+    <div class="pt-6 m-15">
+    <table class="table table-border row-border cell-border">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Submitted On</th>
+                <th>Open/Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td></td>
+                <td></td>
+                <td><button class="button success drop-shadow outline rounded">Open</button><button class="button success ml-5 drop-shadow outline rounded">Delete</button></td>
+            </tr>  
+            <tr>
+                <td>2</td>
+                <td></td>
+                <td></td>
+                <td><button class="button success drop-shadow outline rounded">Open</button><button class="button success ml-5 drop-shadow outline rounded">Delete</button></td>
+            </tr>           
+        </tbody>
+    </table>
+</div>
+</body>
+{% endblock %}

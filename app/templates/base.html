@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="{{ url_for('static',filename='ico/open-book.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static',filename='ico/open-book.ico') }}" type="image/x-icon">
+    <link href="{{ url_for('static',filename='css/metro-all.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='css/home.css') }}" rel="stylesheet">
+    <script type="text/javascript" src="{{ url_for('static',filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/metro.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/featurate.js') }}"></script>
+    <script type="text/javascript">
+        $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+    </script>
+</head>
+{% block content %}{% endblock %}
+</html>

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body class="h-vh-100 bg-brandColor2">
+    <form class="login-form bg-white p-6 mx-auto border bd-default win-shadow" action="" data-clear-invalid="2000"
+        method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <span class="mif-vpn-lock mif-4x place-right" style="margin-top: -10px;"></span>
+        <h2 class="text-light">Admin Login</h2>
+        <hr class="thin mt-4 mb-4 bg-white">
+        <div class="form-group">
+            {{ form.username(size=32) }}
+            <script>
+                $("#username").attr({
+                    "data-role": "input",
+                    "data-prepend": "<span class='mif-envelop'>",
+                    "placeholder": "Enter your Admin-ID..."
+                });
+            </script>
+        </div>
+        <div class="form-group">
+            {{ form.password(size=32) }}
+            <script>
+                $("#password").attr({
+                    "data-role": "input",
+                    "data-prepend": "<span class='mif-key'>",
+                    "placeholder": "Enter your password..."
+                });
+            </script>
+        </div>
+        <div class="form-group mt-10">
+            {{ form.submit() }}
+            {{ form.remember_me() }}
+            <script>
+                $("#remember_me").attr({
+                    "data-role": "checkbox",
+                    "class": "place-right",
+                    "data-caption":"Remember me"
+                });
+                $("#submit").attr({
+                    "class": "button"
+                });
+            </script>
+        </div>
+    </form>
+<body>
+{% endblock %}
