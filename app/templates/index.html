@@ -4,36 +4,36 @@
 <div data-role="appbar" data-expand-point="true">
         <div class="brand no-hover">
             <span class="ancon mif-open-book"></span>
+            <span style="font-weight:100;font-size:32px;">Welcome {{ name }}</span>
         </div>
         
-        <button class="button drop-shadow rounded app-bar-item clogout" role="button">Logout</button>
+        <a class="clogout" href="{{ url_for('login') }}"><button class="button primary drop-shadow rounded app-bar-item" role="button">Logout</button></a>
     
     </div>
-    <div class="pt-6 m-15">
-    <table class="table table-border row-border cell-border">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Submitted On</th>
-                <th>Open/Delete</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td></td>
-                <td></td>
-                <td><button class="button success drop-shadow outline rounded">Open</button><button class="button success ml-5 drop-shadow outline rounded">Delete</button></td>
-            </tr>  
-            <tr>
-                <td>2</td>
-                <td></td>
-                <td></td>
-                <td><button class="button success drop-shadow outline rounded">Open</button><button class="button success ml-5 drop-shadow outline rounded">Delete</button></td>
-            </tr>           
-        </tbody>
-    </table>
+    <div class="fluid-container mt-6 p-15">
+    <div class="m-4 p-4">
+        {# <div class="border bd-black mb-4 w-100">
+            <select data-role="select">
+                {% for ids in users %}
+                <option value="{{ids['feedback_id']}}">{{ids["feedback_id"]}}</option>
+                {% endfor %} 
+            </select>
+            <button class="button outline alert" id="del">Delete</button>
+        </div> #}
+        {% for user in users %}
+            <div class="border bd-black mt-4 mb-4">
+                <ul data-role="listview" disabled>
+                    <li>{{user["feedback_id"]}}</li>
+                    <li>{{user["name"]}}</li>
+                    <li>{{user["email"]}}</li>
+                    <li>{{user["data_in_para"]}}</li>
+                    <li>{{user["ques_gen"]}}</li>
+                    <li>{{user["feedback"]}}</li>
+                    <li>{{user["session"]}}</li>
+                </ul>
+            </div>
+        {% endfor %}       
+    </div>
 </div>
 </body>
 {% endblock %}

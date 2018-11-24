@@ -1,6 +1,5 @@
 from flask import jsonify, render_template, flash, redirect, url_for, request
 from app import app
-from app.forms import LoginForm
 from app.agq.aqgFunction import AutomaticQuestionGenerator
 import json, datetime, os, sys
 
@@ -11,16 +10,13 @@ def check():
     return 'server ready check 1,2,3,...'
 @app.route('/index')
 def index():
-    user = {'username':'Gagan'}
-    return render_template('index.html',title='Home',user=user)
+    with open(DATA_FILENAME,mode="r+",encoding="utf-8") as read_file:
+        dummy = json.load(read_file)
+    return render_template("index.html", users = dummy, name="Admin", title = "QGen")
 
-@app.route('/admin/login', methods=['GET','POST'])
+@app.route('/login')
 def login():
-    form = LoginForm()
-    if form.validate_on_submit():
-        flash('Login requested for user {}, remember_me={}'.format(form.username.data, form.remember_me.data))
-        return redirect(url_for('index'))
-    return render_template('login.html',form=form,title='Admin login')
+    return render_template('login.html',title='Admin login')
 
 @app.route('/about')
 def about():
@@ -74,3 +70,19 @@ def savejson():
             data.append(y)
             json.dump(data,f)
     return 'OK'
+
+@app.route('/del_data')
+def del_html():
+    open_d = []
+    op = request.args.get('ids', 0, type=int)
+    with open(DATA_FILENAME, mode="r+",encoding="utf-8") as read_file:
+        open_d = json.load(read_file)
+    for i in range(len(open_d)):
+        if open_d[i]["feedback_id"] == op:
+            open_d.pop(i)
+            break
+    with open(DATA_FILENAME,mode="w+",encoding="utf-8") as f:
+        json.dump([], f)
+    with open(DATA_FILENAME,mode="w+",encoding="utf-8") as f:
+        json.dump(open_d,f)
+    return redirect(url_for('index'))
